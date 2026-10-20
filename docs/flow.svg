@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="880" height="420" viewBox="0 0 880 420" font-family="-apple-system, 'Segoe UI', 'Microsoft YaHei', sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#57606a"/>
+    </marker>
+  </defs>
+
+  <rect width="880" height="420" fill="#ffffff"/>
+
+  <!-- DSH -->
+  <rect x="40" y="70" width="220" height="150" rx="12" fill="#eef4ff" stroke="#4a72d0" stroke-width="1.5"/>
+  <text x="150" y="100" text-anchor="middle" font-size="17" font-weight="600" fill="#1f3a72">DeepSeek Harness</text>
+  <text x="150" y="126" text-anchor="middle" font-size="12" fill="#4a5568">session.v4.jsonl.zstd</text>
+  <text x="150" y="146" text-anchor="middle" font-size="12" fill="#4a5568">多帧 zstd · 一个事件一帧</text>
+  <text x="150" y="176" text-anchor="middle" font-size="12" fill="#4a5568">workspace.json</text>
+  <text x="150" y="194" text-anchor="middle" font-size="12" fill="#4a5568">工作区 / 归档名单</text>
+
+  <!-- WorkBuddy -->
+  <rect x="620" y="70" width="220" height="150" rx="12" fill="#fff3e8" stroke="#d9822b" stroke-width="1.5"/>
+  <text x="730" y="100" text-anchor="middle" font-size="17" font-weight="600" fill="#8a4b0f">WorkBuddy</text>
+  <text x="730" y="126" text-anchor="middle" font-size="12" fill="#4a5568">projects/&lt;slug&gt;/&lt;uuid&gt;.jsonl</text>
+  <text x="730" y="146" text-anchor="middle" font-size="12" fill="#4a5568">单文件 JSONL · parentId 串链</text>
+  <text x="730" y="176" text-anchor="middle" font-size="12" fill="#4a5568">workbuddy.db</text>
+  <text x="730" y="194" text-anchor="middle" font-size="12" fill="#4a5568">sessions 索引表</text>
+
+  <!-- 转换层 -->
+  <rect x="330" y="60" width="220" height="170" rx="12" fill="#f6f8fa" stroke="#8b949e" stroke-width="1.5" stroke-dasharray="5 4"/>
+  <text x="440" y="88" text-anchor="middle" font-size="14" font-weight="600" fill="#24292f">session-bridge</text>
+
+  <rect x="348" y="102" width="184" height="34" rx="6" fill="#ffffff" stroke="#c9d1d9"/>
+  <text x="440" y="124" text-anchor="middle" font-size="12" fill="#24292f">dsh2wb.js · 跳过归档</text>
+
+  <rect x="348" y="144" width="184" height="34" rx="6" fill="#ffffff" stroke="#c9d1d9"/>
+  <text x="440" y="166" text-anchor="middle" font-size="12" fill="#24292f">wb2dsh.js · 注册工作区</text>
+
+  <rect x="348" y="186" width="184" height="30" rx="6" fill="#ffffff" stroke="#c9d1d9"/>
+  <text x="440" y="206" text-anchor="middle" font-size="12" fill="#24292f">verify.js · 硬约束校验</text>
+
+  <!-- 箭头 -->
+  <line x1="262" y1="112" x2="322" y2="112" stroke="#57606a" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="292" y="102" text-anchor="middle" font-size="11" fill="#57606a">读</text>
+
+  <line x1="558" y1="112" x2="618" y2="112" stroke="#57606a" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="588" y="102" text-anchor="middle" font-size="11" fill="#57606a">写</text>
+
+  <line x1="618" y1="176" x2="562" y2="176" stroke="#57606a" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="590" y="166" text-anchor="middle" font-size="11" fill="#57606a">读</text>
+
+  <line x1="326" y1="176" x2="260" y2="176" stroke="#57606a" stroke-width="1.6" marker-end="url(#arrow)"/>
+  <text x="294" y="166" text-anchor="middle" font-size="11" fill="#57606a">写</text>
+
+  <!-- 底部说明 -->
+  <rect x="120" y="272" width="640" height="104" rx="10" fill="#fafbfc" stroke="#e1e4e8"/>
+  <text x="140" y="298" font-size="12" font-weight="600" fill="#24292f">两处必须一起写，否则应用里看不到：</text>
+  <text x="140" y="320" font-size="12" fill="#57606a">· 正文文件（jsonl / zstd）只是内容，应用列表读的是索引</text>
+  <text x="140" y="340" font-size="12" fill="#57606a">· 索引里的 cwd 与 user_id 必须和当前环境一致，否则被过滤</text>
+  <text x="140" y="360" font-size="12" fill="#57606a">· 归档 ≠ 删除：DSH 只归档，导入时默认跳过</text>
+</svg>

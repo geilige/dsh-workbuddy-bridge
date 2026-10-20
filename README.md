@@ -1,5 +1,11 @@
 # DSH 与 WorkBuddy 互通
 
+[![SkillHub](https://img.shields.io/badge/SkillHub-dsh--workbuddy--bridge-f97316?style=flat-square)](https://skillhub.cn/skills/user_30feeb5f/dsh-workbuddy-bridge)
+[![version](https://img.shields.io/badge/version-1.0.0-blue?style=flat-square)](CHANGELOG.md)
+[![license](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
+[![node](https://img.shields.io/badge/node-%E2%89%A5%2022.15-339933?style=flat-square&logo=node.js&logoColor=white)](#安装)
+[![platform](https://img.shields.io/badge/platform-Windows-0078d4?style=flat-square&logo=windows&logoColor=white)](#安装)
+
 把 [DeepSeek Harness](https://deepseek.com)（DSH 桌面版）的对话搬进 WorkBuddy，或者反过来把 WorkBuddy 的会话搬进 DSH。
 
 两个应用各存一套格式，都没有「导入/导出对话」的入口：
@@ -10,6 +16,8 @@
 | 索引 | `~/.dsh/storages/workspace.json` | `~/.workbuddy/workbuddy.db` 表 `sessions` |
 
 这个技能负责格式转换 **+ 写各自的索引**。只转文件不写索引，应用里是看不到的。
+
+![工作方式](docs/flow.svg)
 
 ## 功能
 
